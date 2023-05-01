@@ -1,4 +1,4 @@
-# Hot_Takes-OCR
+# Hot-Takes-OCR
 
 Project de formation BACK-END chez OpenClassRoom.
 
