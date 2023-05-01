@@ -68,7 +68,7 @@ exports.putSauce = (req, res) => {
           { _id: objectID },
           { ...SauceObject, _id: objectID }
         )
-          .then(() => res.status(200).json({ message: req.params }))
+          .then(() => res.status(200).json({ message: "Sauce Modifiée" }))
           .catch((error) => res.status(400).json({ error }));
       }
     })
