@@ -17,3 +17,7 @@ Langage solicité:
 # Maquette
 
 Front-End déjà réalisé avec Angular.
+
+# Aperçu
+
+![screenshot du site](./maquette.png)
