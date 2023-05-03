@@ -64,13 +64,16 @@ exports.putSauce = (req, res) => {
       if (sauce.userId != req.auth.userId) {
         res.status(401).json({ message: "Non autorisé" });
       } else {
+        const filename = sauce.imageUrl.split("/image/")[1];
+        fs.unlink(`image/${filename}`, () => {
         SauceModel.updateOne(
           { _id: objectID },
           { ...SauceObject, _id: objectID }
         )
           .then(() => res.status(200).json({ message: "Sauce Modifiée" }))
           .catch((error) => res.status(400).json({ error }));
-      }
+      })
+    }
     })
     .catch((error) => res.status(404).json({ error }));
 };

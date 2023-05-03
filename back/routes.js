@@ -2,10 +2,11 @@ const router = require("express").Router();
 const authController = require("./controllers/auth");
 const saucesController = require("./controllers/sauces");
 const jwt = require("./middleware/auth");
-const multer = require("./middleware/multer")
+const multer = require("./middleware/multer");
+const password = require("./middleware/password");
 
 
-router.post("/auth/signup", authController.signUp);
+router.post("/auth/signup", password, authController.signUp);
 router.post("/auth/login", authController.login);
 
 router.get("/sauces", jwt, saucesController.allSauce);
